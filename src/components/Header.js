@@ -11,9 +11,9 @@ function Header() {
   return (
     <header className='shadow-xl w-full'>
 
-      <div className=' max-auto flex items-center gap-10 mr-[90px] '>
+      <div className=' max-auto flex items-center gap-10 mr-[90px] h-[7rem] '>
         <div className='w-[100px] ml-[90px]'>
-          <img src="images/food.jpeg" className='w-full' />
+          <img src="images/food.jpeg" className='w-full h-full ' />
           <p className='ml-[23px] text-bold text-[1.2rem]'>Madhava</p>
         </div>
         <div>

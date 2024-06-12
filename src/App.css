@@ -3,4 +3,8 @@
   max-width: 300px;
  
 }
-
+.custom-input{
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+}

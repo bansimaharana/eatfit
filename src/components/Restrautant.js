@@ -15,7 +15,7 @@ export default function Restrautant({cloudinaryImageId,name,avgRatingString,sla,
       {/* <h4>chinese Work</h4> */}
 
       <div className='d-flex gap-[20px]'>
-        <div>{avgRatingString}</div>
+        <div>⭐{avgRatingString}</div>
         {/* <div>4.3</div> */}
         <div>{sla?.deliveryTime}mins</div>
         {/* <div>40-50min</div> */}

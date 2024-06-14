@@ -1,19 +1,18 @@
+import Shimmer from './shimmer';
 import Restrautant from './Restrautant'
-import {restaurantList} from './const/config'
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import { IoIosSearch } from "react-icons/io"
 
 export default function Cardcontainor() {
   
  const [restaurantData,setRestaurantData] = useState([]);
+ const [loading,setloading] = useState(true);
  const [restaurantCollection,setRestaurantCollection] = useState([]);
- const [Searchtext,setSearchtext] = useState("")
- console.log("restarant",restaurantData)
+ const [Searchtext,setSearchtext] = useState([])
 
-  
+
 
   const handlesearchText = (e) =>{
-    console.log("function is called", Searchtext)
    setSearchtext(e.target.value)
   } 
 
@@ -29,22 +28,30 @@ export default function Cardcontainor() {
     const getRestaurants = async() =>{
       const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
       const json = await data.json();
-      // console.log("json", json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setloading(false)
       setRestaurantData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       setRestaurantCollection(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     } 
     getRestaurants()
   },[])
-  
+ 
+  if(loading){
+   return(
+    <div className="container grid grid-cols-5 gap-[2rem] py-[2rem]">
+    <Shimmer/>
+    </div>
+   )
+  };
+
   return (
     <> 
     <div className='container my-1'>
       <div className='relative flex items-center text-gray-400 focus-within:text-gray-600'>
       <button className='flex items-center' onClick={filterData}><IoIosSearch className='w-5 h-5 absolute ml-3'/></button>
-       <input type="text" placeholder='search for restaurants and food'className='pr-4 pl-10 py-2 font-semibold placeholder-gray-400 w-[50%] text-black rounded-2xl border-none ring-1 ring-gray-300 focus:ring-2'value={Searchtext} onChange={handlesearchText} />
+       <input type="text" placeholder='search for restaurants and food'className='pr-4 pl-10 py-2 font-semibold placeholder-gray-400 w-[50%] text-black rounded-2xl border-none ring-1 ring-gray-400 focus:ring-2'value={Searchtext} onChange={handlesearchText} />
       </div>
     </div>
-     { <div className="container grid grid-cols-4 gap-[2rem] py-[2rem]">
+     { <div className=" custom-card container grid grid-cols-5 gap-[2rem] py-[2rem]">
       
       {
         restaurantData.map((restaurant)=>{

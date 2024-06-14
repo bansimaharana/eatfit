@@ -87,3 +87,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
         )
        }) 
       } */}
+
+
+
+
+     import React from 'react'
+
+export default function shimmer() {
+  return (
+    <div><div className='custom-card'>
+    <div className='mb-2'>
+      <div className='h-[240px] w-[240px] rounded-2xl'></div>
+    </div>
+
+    <div className='px-2'>
+    <h4 className='h-[20px] bg-slate-500'></h4>
+
+  <div className='d-flex gap-[20px]'>
+    <div className='h-[20px] bg-slate-500'></div>
+    <div className='h-[20px] bg-slate-500'></div>
+  </div>
+
+   <div className='h-[20px] bg-slate-500'></div>
+
+   <div className='h-[20px] bg-slate-500'></div>
+
+   </div>
+
+  </div>
+  )}

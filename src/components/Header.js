@@ -11,13 +11,18 @@ function Header() {
   return (
     <header className='shadow-xl w-full'>
 
-      <div className=' max-auto flex items-center gap-10 mr-[90px] h-[7rem] '>
-        <div className='w-[100px] ml-[90px]'>
-          <img src="images/food.jpeg" className='w-full h-full ' />
-          <p className='ml-[23px] text-bold text-[1.2rem]'>Madhava</p>
+      <div className=' max-auto flex items-center mr-[90px] h-[4.7rem] '>
+        <div className='ml-[100px]'>
+          <img src="images/food.jpeg" className='w-[4.5rem] h-[4.5rem] ' />
         </div>
+        
+        <div className='mr-[3rem] mt-4'>
+        <p className='font-semibold text-[18px] text-[#1a8cff]'>Madhava</p>
+      
+        </div>
+       
         <div>
-          <span className='font-bold border-b-[2px] border-b-[black] text-[20px] text-[#3d3d5c]'>other < RxCaretDown className='inline text-[#fc8019] cursor-pointer' /></span>
+          <span className='font-semibold text-[20px] text-[#3d3d5c]'><span className='underline shadow-sm'>other</span> < RxCaretDown className='inline text-[#fc8019] cursor-pointer' /></span>
         </div>
 
         <nav className='flex list-none gap-8 ml-auto font-semibold text-[17px]'>

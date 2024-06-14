@@ -13,7 +13,7 @@ export default function Body() {
     <div>
       <div className='ml-[3.9rem]'>
     <Carousel/>
-    <hr className='w-[77rem] ml-[5.2rem]' />
+    <hr className='w-[81rem] ml-[5.2rem]' />
      </div>
 
      

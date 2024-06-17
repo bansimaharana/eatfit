@@ -7,7 +7,7 @@ export default function Footer() {
 
             <div className=' p-[4rem] max-auto flex gap-[7rem] justify-center'>
                 <div className="">
-                    <span className='text-3xl text-[white]'>Madhava</span><br />© 2024 Bundl<br /> Technologies Pvt. Ltd
+                    <span className='text-3xl text-[white]'>Madhav</span><br />© 2024 Bundl<br /> Technologies Pvt. Ltd
                 </div>
 
                 <div>

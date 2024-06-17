@@ -3,6 +3,9 @@ import React from 'react'
 export default function shimmer() {
   return (
     new Array(20).fill(0).map(()=>(
+      <div>
+       
+
         <div className='container'>
         <div className='mb-3'>
           <div className='h-[200px] w-[full] bg-slate-200 rounded'></div>
@@ -22,6 +25,8 @@ export default function shimmer() {
     
        </div>
     
+      </div>
+
       </div>
     ))
    

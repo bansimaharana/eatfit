@@ -11,18 +11,16 @@ function Header() {
   return (
     <header className='shadow-xl w-full'>
 
-      <div className=' max-auto flex items-center mr-[90px] h-[4.7rem] '>
+      <div className=' max-auto flex items-center mr-[90px] h-[4.5rem] '>
+       
         <div className='ml-[100px]'>
-          <img src="images/food.jpeg" className='w-[4.5rem] h-[4.5rem] ' />
+          <img src="images/food.jpeg" className='w-[4.6rem] h-[4.6rem] mb-2 img ' />
         </div>
         
-        <div className='mr-[3rem] mt-4'>
-        <p className='font-semibold text-[18px] text-[#1a8cff]'>Madhava</p>
-      
-        </div>
-       
+        <span className='font-semibold text-[18px] text-[#1a8cff] mt-2 ml-[3px]'>Madhav</span>
+        
         <div>
-          <span className='font-semibold text-[20px] text-[#3d3d5c]'><span className='underline shadow-sm'>other</span> < RxCaretDown className='inline text-[#fc8019] cursor-pointer' /></span>
+          <span className='font-semibold text-[20px] text-[#3d3d5c] ml-[4.5rem]'><span className='underline shadow-sm'>other</span> < RxCaretDown className='inline text-[#1a8cff] cursor-pointer' /></span>
         </div>
 
         <nav className='flex list-none gap-8 ml-auto font-semibold text-[17px]'>
@@ -33,7 +31,7 @@ function Header() {
 
           <li className='flex items-center gap-1 hover:text-[#1a8cff] cursor-pointer'>
             <BiSolidOffer />
-            offers<sup><span className='text-[#fa9938] cursor-pointer'>new</span></sup>
+            offers<sup><span className='text-[#1a8cff] cursor-pointer'>new</span></sup>
           </li>
 
           <li className='flex items-center gap-1 hover:text-[#1a8cff] cursor-pointer'>

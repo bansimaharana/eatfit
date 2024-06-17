@@ -1,0 +1,27 @@
+.custom-card{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+.textname h4{
+ white-space: nowrap;
+ text-overflow: ellipsis;
+ overflow: hidden;
+
+}
+.cusisinename{
+ white-space: nowrap;
+ text-overflow: ellipsis;
+ overflow: hidden; 
+}
+
+.custom-card:hover{
+    transform:scale(90%);
+    transition: 0.5s;
+}
+
+.img:hover{
+    transform:scale(110%);
+    transition: 0.3s;
+}

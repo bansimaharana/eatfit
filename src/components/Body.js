@@ -24,7 +24,7 @@ export default function Body() {
       </div>
       
     
-    <div className=''>
+    <div>
     <Cardcontainor/>
     </div>
   

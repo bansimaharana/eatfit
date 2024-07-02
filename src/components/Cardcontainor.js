@@ -15,6 +15,7 @@ export default function Cardcontainor() {
 
   const handlesearchText = (e) =>{
    setSearchtext(e.target.value)
+   
   } 
 
   const filterData = () =>{
@@ -52,10 +53,12 @@ const returnhome = () =>{
 
 
 
+
+
   useEffect(() =>{
     const getRestaurants = async() =>{
       try{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
       const json = await data.json();
       setloading(false)
       setRestaurantData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -91,7 +94,7 @@ const returnhome = () =>{
   return (
     <div> 
     <div className=' my-1 container flex'>
-      <div className='relative flex items-center'>
+      <div className='relative flex items-center' >
       <button className='flex items-center' onClick={filterData}><IoIosSearch className='w-5 h-5 absolute ml-3'/></button>
        <input type="text" placeholder='search for restaurants and food'className='pr-4 pl-10 py-2 font-semibold placeholder-gray-400 w-[30rem] text-black rounded-2xl border-none ring-1 ring-gray-400 focus:ring-2  bg-slate-100'value={Searchtext} onChange={handlesearchText} />
       </div>
@@ -134,7 +137,9 @@ const returnhome = () =>{
            />
            
           )
-        }):<h1> some thing went wrong</h1>
+        }):
+          <h1> some thing went wrong</h1> 
+        
         
          
       } </div>

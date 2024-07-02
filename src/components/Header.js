@@ -7,7 +7,8 @@ import { GiShoppingCart } from "react-icons/gi"
 import { TbProgressHelp } from "react-icons/tb"
 
 
-function Header() {
+
+export default function Header() {
   return (
     <header className='shadow-xl w-full'>
 
@@ -61,4 +62,4 @@ function Header() {
 }
 
 
-export default Header
+ 

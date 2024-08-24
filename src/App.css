@@ -26,3 +26,19 @@
     transition: 0.3s;
 }
 
+.black-overlay{
+  background-color: rgba(0,0,0,0.7);  
+}
+
+.menu_container{
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+}
+.info_container{
+    border-radius: 30px;
+   
+    margin-top: 50px;
+    
+}
+

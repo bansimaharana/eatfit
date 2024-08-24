@@ -5,9 +5,9 @@ import Footer from './Footer'
 export default function Signin() {
   return (
     <div>
-    <Header/>
-    Signin
-    <Footer/>
+   
+    Sign in
+    
     </div>
   )
 }

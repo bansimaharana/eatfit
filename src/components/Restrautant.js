@@ -1,11 +1,12 @@
 import React from 'react'
 import { Img_url } from './const/config';
 import { FcRating } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
-export default function Restrautant({cloudinaryImageId,name,avgRatingString,sla,cuisines,areaName}) {
+export default function Restrautant({cloudinaryImageId,name,avgRatingString,sla,cuisines,areaName, id}) {
   return (
   
-      <div className='custom-card'>
+      <Link to={`/menu/${id}`}className='custom-card text-dark text-decoration-none'>
         <div className='mb-2 box'>
           <img src={Img_url+cloudinaryImageId} className='h-[220px] w-[240px] rounded-2xl'/>
           {/* <img src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597'className='h-[240px] w-[240px] rounded-2xl'/> */}
@@ -29,7 +30,7 @@ export default function Restrautant({cloudinaryImageId,name,avgRatingString,sla,
        {/* <div>Ghatkopar(west)</div> */}
        </div>
 
-      </div>  
+      </Link>  
     
   )
 }

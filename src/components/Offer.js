@@ -5,9 +5,9 @@ import Footer from './Footer'
 export default function offer() {
   return (
     <div>
-      <Header/>
+      
       offer
-      <Footer/>
+      
     </div>
   )
 }

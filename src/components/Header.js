@@ -22,18 +22,19 @@ export default function Header() {
   const cartItems = useSelector((store)=>store.cart.items)
   console.log("cartsilce",cartItems)
   console.log("online status", isOnline)
+  
 
    return (
   <>
-    <div className='black-overlay w-full h-full fixed duration-500'onClick={hideslide} style={{
+    <div className='black-overlay  z-10 w-full h-full fixed duration-500'onClick={hideslide} style={{
       opacity: slide ? 1 : 0,
       visibility: slide ? 'visible' : 'hidden'
     }}>
-      <div className='w-[470px] bg-white h-full absolute duration-[600ms]' onClick={(e) =>{ e.stopPropagation();}} style={{ left: slide ? '0%' : '-100%' }}>
-
+      <div className='w-[470px] bg-white h-full absolute duration-[600ms] ' onClick={(e) =>{ e.stopPropagation();}} style={{ left: slide ? '0%' : '-100%' }}>
+         <input type="text" className='border  focus:outline-none focus:shadow-lg mt-[7rem] p-2 '/>
       </div>
     </div>
-    <header className='shadow-xl w-full'>
+    <header className='shadow-xl w-full sticky  top-0 bg-white z-[9999]'>
 
       <div className=' max-auto flex items-center mr-[90px] h-[4.5rem] '>
        
@@ -80,7 +81,8 @@ export default function Header() {
 
           <Link to="/Cart" className='flex items-center gap-1 hover:text-[#1a8cff] cursor-pointer text-[black] text-decoration-none'>
             <GiShoppingCart />
-            cart = {cartItems.length} items <sup className='text-[black]'>(0)</sup>
+            cart <sup className='text-[black]'>(0)</sup>
+            
           </Link>
 
         </nav>

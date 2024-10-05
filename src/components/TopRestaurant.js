@@ -2,33 +2,25 @@
 import React, { useEffect, useState } from 'react'
 import { HiArrowSmRight } from "react-icons/hi";
 import { HiArrowSmLeft } from "react-icons/hi";
-import { RES_URL } from './const/config';
+import { FcRating } from "react-icons/fc";
 
-export default function TopRestaurant() {
+export default function TopRestaurant({data}) {
+  // console.log("data",data)
     const [value, setValue] = useState(0)
-    const [categories, setCategories] = useState([]);
+    function handleNext() {
+      if (value < 300) { // Proceed only if value is less than 300
+          setValue((prev) => prev + 45);
+      }
+  }
+  
+  function handlePrev() {
+      if (value > 0) { // Proceed only if value is greater than 0
+          setValue((prev) => prev - 45);
+      }
+  }
+  
 
-    function handleNext(){
-        value >=300 ? "" : setValue((prev) => prev  + 45)
-        }
-      
-        function handlePrev(){
-            value <= 0 ? "" : setValue((prev) => prev  - 45)
-        } 
-
-        useEffect(() =>{
-            const fetchcategory = async() =>{
-              
-              const data = await fetch(RES_URL)
-              const json = await data.json();
-              // setloading(false)
-              //  setRestaurantData(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-              console.log( "bansi",json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-              setCategories(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-              
-            } 
-            fetchcategory()
-          },[])
+        
 
   return (
     
@@ -50,11 +42,27 @@ export default function TopRestaurant() {
     <div className='mr-[45px] overflow-hidden '>
     <div style={{translate : `-${value}%`}} className={`flex mt-4 gap-4 w-full duration-300 `}>
        {
-        categories.map(({info}) =>(
-          <div className='min-w-[250px] h-[182px] '>
-           <img className="h-full w-full object-cover rounded-2xl" src={"https://media-assets.swiggy.com/swiggy/image/upload/" + info?.cloudinaryImageId} alt=""/>
+        data.map(({info}) =>(
+          <div className='custom-cards img'>
+
+          <div className='min-w-[250px] h-[182px] relative cursor-pointer'>
+           <img className="h-full w-full object-cover rounded-2xl " src={"https://media-assets.swiggy.com/swiggy/image/upload/" + info?.cloudinaryImageId} alt=""/>
+           <div className='absolute top-0 inset-0 flex bg-gradient-to-t from-black from-1% to-transparent to-40% rounded-2xl'></div>
+           <div className="absolute bottom-1 ml-3 mt-100 text-white text-xl font-bold">{info.aggregatedDiscountInfoV3?.header + " " + info.aggregatedDiscountInfoV3?.subHeader}</div>
+          </div>
+
+          <div className='mt-2'>
+             <div className='text-xl font-semibold'>{info?.name}</div>
+             <div className='d-flex gap-[20px] text-base font-semibold'>
+             <div className='flex gap-[3px]'><FcRating className='mt-1 h-5 w-5' />{info?.avgRatingString}</div>
+             <div>{info?.sla?.deliveryTime} min</div>
+             </div>
+             <div className='line-clamp-1 text-black/60 font-medium'>{info?.cuisines.join(", ")}</div>
+             <div className='line-clamp-1 text-black/60 font-medium'>{info?.areaName}</div>
+             </div>
 
           </div>
+          
 
           
         

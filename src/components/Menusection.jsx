@@ -2,6 +2,7 @@ import React from 'react'
 import { Img_url } from './const/config'
 import { IoCaretDownCircleOutline } from "react-icons/io5";
 import { GiAlliedStar } from "react-icons/gi";
+import ImageWithButtons from './ImageWithButtons ';
 
 export default function Menusection({isVeg, name, costForTwo, avgRating, ratingCount, description, imageUrl }) {
   return (
@@ -16,6 +17,7 @@ export default function Menusection({isVeg, name, costForTwo, avgRating, ratingC
         </div>
         <div>
            <img style={{width:"200px", height:"150px", objectFit:"cover", borderRadius:"20px"}}src={Img_url+imageUrl}/>
+           <ImageWithButtons/>
         </div>
 
     </div>
